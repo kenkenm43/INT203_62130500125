@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <!-- https://fontawesome.com/icons -->
+  <script src="https://kit.fontawesome.com/ffb5cefdd9.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    .over1:hover {
+      filter: grayscale(100%) opacity(50%);
+      transition: .5s
+    }
+    .over2:hover{
+      filter: grayscale(100%);
+      transition: .5s
+    }
+    .s{
+      width: 23rem; 
+      height: 13.125;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- class="h-screen w-full bg-gray-200 flex items-start justify-start" -->
+  <div id="app" class="h-screen bg-blue-500 text-sm font-sans">
+    <div class="bg-white bg-fixed md:h-full" style="height: 8.625rem">
+      <div class="h-11 p-3 text-white font-bold"
+        style=" background-image: linear-gradient(to right, rgb(196,20,239) 25%,rgb(29,169,235));">
+        <span class="ml-20"><a href="#" class="hover:opacity-60 transition duration-300">Contact Us <i
+              class="far fa-comment-dots"></i> </a></span>
+        <span class="float-right space-x-2.5 pr-20">
+          <span><a href="#" class="hover:opacity-60 transition duration-300"><i class="fas fa-lock"> </i> Login
+            </a></span>
+          <span>|</span>
+          <span><a href="#" class="hover:opacity-60 transition duration-300"><i class="fas fa-user-plus"> </i> Register
+            </a></span>
+        </span>
+      </div>
+      <div class="ml-24 mt-2 md:flex md:flex-rows ">
+        <div class="mt-2 md:w-48">
+          <a href="#"><img src="https://www.cgcthailand.com/assets/images/logo.png" alt="" /></a>
+        </div>
+        <nav class="mt-8 ml-8 text-xs">
+          <ul class="md:flex space-x-8 font-medium text-gray-600">
+            <li>
+              <a href="#home" class="hover:text-blue-700 transition duration-300">บัตรเติมเงิน <i
+                  class="fas fa-angle-down"></i></a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-blue-700 transition duration-300">เติมเงินมือถือ</a>
+            </li>
+            <li>
+              <a href="#clients" class="hover:text-blue-700 transition duration-300">เติมเกมออนไลน์</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">วิธีเติมเกมให้คุ้ม</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">นโยบายและเงื่อนไข</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">เติมเงิน <i
+                  class="fas fa-angle-down"></i></a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">คำถามที่พบบ่อย</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">ช่วยเหลือ <i
+                  class="fas fa-angle-down"></i></a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-700 transition duration-300">เครดิตซื้อขาย</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div style="height: 31.25rem" class="bg-gray-900"><img src="https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-pure-color-watercolor-graffiti-gradient-background-board-design-board-design-image_66713.jpg" alt="" style="height: 31.25rem"></div>
+    <div class="bg-gray-200 h-auto">
+      <div class="flex-1 mx-auto pt-9" style="height: 50rem">
+        <ul class="grid sm:grid-cols-3 gap-x-10 gap-y-8 px-20">
+          <!-- hover:from-pink-500 hover:to-yellow-500 -->
+          <li>
+            <div class="over2 s" ><img src="./images/2.png" alt="" class="s"></div>
+          </li>
+          <li>
+            <div class="over2 s"><img src="./images/3.png" alt="" class="s"></div>
+          </li>
+          <li>
+            <div class="over2 s"><img src="./images/4.png" alt="" class="s"></div>
+          </li>
+          <li>
+            <div class="over2 s"><img src="./images/5.png" alt="" class="s"></div>
+          </li>
+          <li>
+            <div class="over2 s"><img src="./images/6.png" alt="" class="s"></div>
+          </li>
+          <li>
+            <div class="over2 s"><img src="./images/7.png" alt="" class="s"></div>
+          </li>
+          <li class="col-span-3">
+            <div class="over2"><img src="./images/1.png" alt="" class="rounded-md"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="mx-auto border-b border-gray-300 mt-5 font-bold" style="height: 39rem">
+        <div class="flex space-x-1 float-right mr-24 ">
+          <button
+            class="mt-4 bg-white h-11 w-11 rounded-full flex items-center justify-center border border-gray-900 border-opacity-20 bg-gradient-to-tl from-white to-white hover:from-blue-400 hover:via-purple-700 hover:to-pink-500">
+            <i class="fas fa-chevron-left"></i></button>
+          <button
+            class="float-right mt-4 bg-white h-11 w-11 rounded-full flex items-center justify-center border border-gray-900 border-opacity-20 bg-gradient-to-tl from-white to-white hover:from-blue-400 hover:via-purple-700 hover:to-pink-500">
+            <div class="">
+              <i class="fas fa-chevron-right "></i>
+            </div>
+          </button>
+        </div>
+        <div class="px-20 pb-2 "><span class="text-2xl">เติมเกมออนไลน์</span>
+
+          <div class="text-black text-opacity-60">Top up Games online <span
+              class="text-xs bg-black text-white rounded-full px-1 ml-2"><a href="#">ดูทั้งหมด</a></span></div>
+        </div>
+        <ul class="grid sm:grid-cols-6 gap-x-8 gap-y-8 px-20 py-4 text-black text-opacity-60">
+          <li>
+            <a href="#">
+              <div class="shadow-lg "><img src="https://www.cgcthailand.com/assets/images/termgame/roh.png" alt=""
+                  class="rounded-lg showdow-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="shadow-lg"><img src="https://www.cgcthailand.com/assets/images/termgame/lifeafter_tile.jpeg"
+                  alt="" class="rounded-lg showdow-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="shadow-lg"><img src="https://www.cgcthailand.com/assets/images/termgame/tjc_tile.jpg" alt=""
+                  class="rounded-lg showdow-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="shadow-lg"><img src="https://www.cgcthailand.com/assets/images/termgame/ENUbpkB.jpg" alt=""
+                  class="rounded-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="shadow-lg"><img src="https://www.cgcthailand.com/assets/images/termgame/onepunchman_tile.png"
+                  alt="" class="rounded-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="shadow-lg"><img
+                  src="https://www.cgcthailand.com/assets/images/termgame/MARVELsuperwar_tile.png" alt=""
+                  class="rounded-lg"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+        </ul>
+        <div class="flex space-x-1 float-right mr-24 ">
+          <button
+            class="mt-4 bg-white h-11 w-11 rounded-full flex items-center justify-center border border-gray-900 border-opacity-20 bg-gradient-to-tl from-white to-white hover:from-blue-400 hover:via-purple-700 hover:to-pink-500 ">
+            <i class="fas fa-chevron-left"></i></button>
+          <button
+            class="float-right mt-4 bg-white h-11 w-11 rounded-full flex items-center justify-center border border-gray-900 border-opacity-20 bg-gradient-to-tl from-white to-white hover:from-blue-400 hover:via-purple-700 hover:to-pink-500">
+            <div class="">
+              <i class="fas fa-chevron-right "></i>
+            </div>
+          </button>
+        </div>
+        <div class="px-20 pb-2 mt-5"><span class="text-2xl">บัตรเติมเงินต่างๆ</span>
+
+          <div class="text-black text-opacity-60">Card Online <span
+              class="text-xs bg-black text-white rounded-full px-1 ml-2"><a href="#">ดูทั้งหมด</a></span></div>
+        </div>
+        <ul class="grid sm:grid-cols-6 gap-x-8 gap-y-6 px-20 text-black text-opacity-60">
+          <li>
+            <a href="#">
+              <div class="rounded-md shadow-lg h-48"><img
+                  src="https://lh3.googleusercontent.com/z9wdWoDJIY7sWzsA-a3dPT07oakGYRUoKJR0O3aWd3FrqvvruOMf5ObTxWa6_H3HIMmpNX8=s85"
+                  alt="" class="h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg-purple-700 rounded-md shadow-lg h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg-purple-700 rounded-md shadow-lg h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg-purple-700 rounded-md shadow-lg h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg-purple-700 rounded-md shadow-lg h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg-purple-700 rounded-md shadow-lg h-48"></div>
+            </a>
+            <div class="p-2 flex justify-center"><a href="#" class="hover:text-blue-700 transition duration-300">slam
+                dunk mobile</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-white" style="height: 22.3125rem">
+      <ul class="grid sm:grid-cols-6 gap-x-8 px-20 pt-12 font-bold text-base">
+        <li class="col-span-2">
+          <i class="fas fa-exclamation-circle"></i> About Us
+        </li>
+        <li>
+          <div class="">Contact</div>
+        </li>
+        <li>
+          <div class="">Help ?</div>
+        </li>
+        <li class="col-span-2">
+          <div class="">Facebook Fanapage</div>
+        </li>
+      </ul>
+      <ul class="grid grid-cols-6 gap-x-8 gap-y-6 px-20 pt-8">
+        <li class="col-span-2">
+
+          <div class="break-words">
+            เกี่ยวกับเรา<br> CGC Thailand
+            เป็นเพียงตัวแทนจำหน่ายเท่านั้น
+            ไม่มีส่วนเกี่ยวข้องกับองค์กรหรือบุคคลใดๆที่แอบอ้างใช้ชื่อบัญชีธนาคาร
+            ร้านซีจีซีไทยแลนด์
+            เครดิตในเว็บไซต์ใช้สำหรับซื้อสินค้าภายในเว็บไซต์เท่านั้นโปรดระวังมิจฉาชีพแอบอ้างบัญชีเราเพื่อหลอกให้ผู้อื่นจ่ายค่าสินค้าแทน
+          </div>
+
+        </li>
+        <li>
+          <ul class="space-y-4">
+            <li>
+              <i class="fas fa-mobile-alt"></i><a href="#" class="hover:text-blue-700 transition duration-300">
+                063-516-5247</a>
+            </li>
+            <li>
+              <i class="fab fa-line"></i><a href="#" class="hover:text-blue-700 transition duration-300"> @kenmk</a>
+            </li>
+            <li>จ - อ : 10:00น. - 22:00น.</li>
+          </ul>
+        </li>
+        <li>
+          <ul class="space-y-3">
+            <li><a href="#" class="hover:text-blue-700 transition duration-300"><i class="fas fa-angle-right"></i>
+                วิธีสมัครสมาชิก</a></li>
+            <li><a href="#" class="hover:text-blue-700 transition duration-300"><i class="fas fa-angle-right"></i>
+                วิธีเติมเงิน</a></li>
+            <li><a href="#" class="hover:text-blue-700 transition duration-300"><i class="fas fa-angle-right"></i>
+                วิธีสั่งซื้อสินค้า</a></li>
+          </ul>
+        </li>
+        <li class="col-span-2">
+          <div class=""></div>
+        </li>
+      </ul>
+      <div class="my-14 flex justify-center flex-row space-x-16">
+        <div class="over1"><a href=""><img src="https://www.cgcthailand.com/assets/images/logo/logo-ture.png"
+              alt=""></a></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-turemoney.png" alt=""
+            class="transform bg-opacity-60"></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-kbank.png" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-krungsri.png" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-krungthai.png" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-bbl.png" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-scb.png" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-paypal.png?v=1" alt=""></div>
+        <div class="over1"><img src="https://www.cgcthailand.com/assets/images/logo/logo-prompt-pay.jpg" alt=""></div>
+      </div>
+
+      
+    </div>
+    <footer class="bg-gray-900 border-t-2 border-indigo-500 text-white" style="height: 5.25rem">
+      <div class="my-7 ml-24">CGC Thailand &copy; 2018-2020 สงวนสิทธิ์
+        <p class="float-right mr-24 hover:text-gray-400 transition duration-300"><a href=""> ติดต่อเรา </a><i class="far fa-comment-dots"></i></p>
+      </div>
+
+      <!-- <div class="">ติดต่อเรา <i class="far fa-comment-dots"></i></div> -->
+    </footer>
+
+    <!-- my main.js -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
